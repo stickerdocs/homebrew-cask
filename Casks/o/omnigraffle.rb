@@ -50,8 +50,8 @@ cask "omnigraffle" do
     end
   end
   on_big_sur :or_newer do
-    version "7.21.5"
-    sha256 "3f119996dff56c175a4dac9c651d5159d2e6f0802dd170590621932534e57502"
+    version "7.22.5"
+    sha256 "d2e43b80b7bc1a44c9f005551924c9f27d8a19e98518e96d77dd82e38ccfdee1"
 
     url "https://downloads.omnigroup.com/software/macOS/11/OmniGraffle-#{version}.dmg"
 
@@ -59,6 +59,8 @@ cask "omnigraffle" do
       url "https://www.omnigroup.com/download/latest/omnigraffle/"
       strategy :header_match
     end
+
+    depends_on macos: ">= :big_sur"
   end
 
   name "OmniGraffle"
@@ -73,7 +75,7 @@ cask "omnigraffle" do
     "~/Library/Application Scripts/com.omnigroup.OmniGraffle#{version.major}",
     "~/Library/Application Support/CloudDocs/session/containers/iCloud.com.omnigroup.OmniGraffle.plist",
     "~/Library/Application Support/CloudDocs/session/containers/iCloud.com.omnigroup.OmniGraffle/",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.omnigroup.omnigraffle#{version.major}.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.omnigroup.omnigraffle#{version.major}.sfl*",
     "~/Library/Containers/com.omnigroup.OmniGraffle#{version.major}",
     "~/Library/Mobile Documents/iCloud~com~omnigroup~OmniGraffle",
   ]

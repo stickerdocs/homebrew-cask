@@ -15,8 +15,8 @@ cask "openrct2" do
         verified: "github.com/OpenRCT2/OpenRCT2/"
   end
   on_mojave :or_newer do
-    version "0.4.5"
-    sha256 "0e582837e67a3fe5796d2aa96c6fd81ecd1a3c069273c44f3e8adf75a23367e5"
+    version "0.4.8"
+    sha256 "85ce637e17bab633a29faa4da529ac44ef9d97ba270466ad5a0672c576435363"
 
     url "https://github.com/OpenRCT2/OpenRCT2/releases/download/v#{version}/OpenRCT2-#{version}-macos-universal.zip",
         verified: "github.com/OpenRCT2/OpenRCT2/"
@@ -29,8 +29,8 @@ cask "openrct2" do
   app "OpenRCT2.app"
 
   zap trash: [
-    "~/Library/Application Support/OpenRCT2",
     "~/Library/Application Support/CrashReporter/OpenRCT2*",
+    "~/Library/Application Support/OpenRCT2",
     "~/Library/Preferences/io.openrct2.OpenRCT2.plist",
     "~/Library/Preferences/website.openrct2.OpenRCT2.plist",
     "~/Library/Saved Application State/io.openrct2.OpenRCT2.savedState",

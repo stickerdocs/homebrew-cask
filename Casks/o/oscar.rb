@@ -1,6 +1,6 @@
 cask "oscar" do
-  version "1.4.0"
-  sha256 "edee3693bcf0804f1ddb912031dc7a2940c48abc01909a6d5a1beef94f329ea1"
+  version "1.5.1"
+  sha256 "09b1ff0499b6ec90e22069ce44d68b1e94f7d456cb93a5817b412fa20c891580"
 
   url "https://www.apneaboard.com/OSCAR/OSCAR-#{version}.dmg",
       verified: "apneaboard.com/OSCAR/"
@@ -13,7 +13,12 @@ cask "oscar" do
     regex(%r{href=.*?/OSCAR[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
   end
 
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :high_sierra"
 
   app "OSCAR.app"
+
+  zap trash: [
+    "~/Library/Preferences/org.oscar-team.OSCAR.plist",
+    "~/Library/Saved Application State/org.oscar-team.OSCAR.savedState",
+  ]
 end

@@ -1,9 +1,9 @@
 cask "owncloud" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "4.1.0.11250"
-  sha256 arm:   "ec2d4352d420f86ce0754fcf125ca035b6d485535ea17e3a719b0fee7cf5a4c7",
-         intel: "184960e16fa1f982ca9ab024d91686dffb2a96fd6bcb1fe50cc47f62a42d0e11"
+  version "5.2.1.13040"
+  sha256 arm:   "49bd5a5a30c6af0c8fbf2acd180838761de6db303cea8cbf54706b208aa20b9c",
+         intel: "99f6645678b1f6f7ca75a61c0bbeb2ca7412730bcde41ecfcac8e121afbe14ad"
 
   url "https://download.owncloud.com/desktop/ownCloud/stable/#{version}/mac/ownCloud-#{version}-#{arch}.pkg"
   name "ownCloud"
@@ -21,8 +21,8 @@ cask "owncloud" do
   pkg "ownCloud-#{version}-#{arch}.pkg"
 
   uninstall pkgutil: [
-    "com.ownCloud.client",
     "com.owncCloud.finderPlugin",
+    "com.ownCloud.client",
   ]
 
   zap trash: [

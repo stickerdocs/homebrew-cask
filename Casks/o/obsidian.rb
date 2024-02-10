@@ -1,6 +1,6 @@
 cask "obsidian" do
-  version "1.3.7"
-  sha256 "8c7b2b4980472413320a11ac8171f11ff4bbc1d23508ca27ce277c59e9cd4a62"
+  version "1.5.3"
+  sha256 "0178f3430671c91688f26314d84b0d2b47d17174bb50d34158f5de2738289a56"
 
   url "https://github.com/obsidianmd/obsidian-releases/releases/download/v#{version}/Obsidian-#{version}-universal.dmg",
       verified: "github.com/obsidianmd/"
@@ -14,12 +14,13 @@ cask "obsidian" do
   end
 
   auto_updates true
+  depends_on macos: ">= :high_sierra"
 
   app "Obsidian.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/md.obsidian.sfl*",
     "~/Library/Application Support/obsidian",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/md.obsidian.sfl2",
     "~/Library/Preferences/md.obsidian.plist",
     "~/Library/Saved Application State/md.obsidian.savedState",
   ]

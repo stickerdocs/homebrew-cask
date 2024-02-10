@@ -1,6 +1,6 @@
 cask "oracle-jdk-javadoc" do
-  version "20.0.2,9,6e380f22cbe7469fa75fb448bd903d8e"
-  sha256 "7d41ca5845dd71d20ae95968773bed4c1f652880d11048aef1f482e7b69cfc8c"
+  version "21.0.2,13,f2283984656d49d69e91c558476027ac"
+  sha256 "f1140e90749c7eb2368bb535d4d8b72b86cf946494c71b1f03d2c873596a05d1"
 
   url "https://download.oracle.com/otn_software/java/jdk/#{version.csv.first}+#{version.csv.second}/#{version.csv.third}/jdk-#{version.csv.first}_doc-all.zip",
       cookies: {
@@ -18,9 +18,9 @@ cask "oracle-jdk-javadoc" do
     end
   end
 
-  artifact "docs", target: "/Library/Java/JavaVirtualMachines/jdk-#{version.csv.first}.jdk/Contents/Home/docs"
+  artifact "docs", target: "/Library/Java/JavaVirtualMachines/jdk-#{version.major}.jdk/Contents/Home/docs"
 
-  uninstall rmdir: "/Library/Java/JavaVirtualMachines/jdk-#{version.csv.first}.jdk"
+  uninstall rmdir: "/Library/Java/JavaVirtualMachines/jdk-#{version.major}.jdk"
 
   # No zap stanza required
 

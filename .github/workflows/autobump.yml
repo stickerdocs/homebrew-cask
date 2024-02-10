@@ -7,77 +7,111 @@ on:
         description: Custom list of casks to livecheck and bump if outdated
         required: false
   schedule:
-    # Every day at 5am
-    - cron: "0 5 * * *"
+    # Every 3 hours 23 minutes past the hour
+    - cron: "23 */3 * * *"
 
 env:
   CASKS: >
     1password
     1password-cli
     alfred
+    alt-tab
+    altair-graphql-client
     apifox
     appcleaner
     arc
+    banking-4
     beeper
+    bettermouse
     bettertouchtool
     bike
     brave-browser
+    bruno
     burp-suite
     burp-suite-professional
     busycal
+    calibre
     canva
+    capacities
     carbon-copy-cloner
+    chatall
     chirp
+    chromium-gost
     clickup
+    cloudnet
     codeql
     cog
     confluent-cli
+    copilot
     copilot-for-xcode
+    cursor
+    dbeaver-community
     descript
+    downie
     dropbox
     duckduckgo
+    electerm
     electron
+    elephas
     eloston-chromium
     figma
     firefox
     flipper
+    flutter
     fmail2
+    forkgram-telegram
+    fossa
     foxglove-studio
     gather
     glyphs
     google-chrome
+    google-cloud-sdk
+    google-drive
     grammarly-desktop
     grandtotal
     hackolade
-    hepta
+    heptabase
+    hstracker
+    hydrus-network
     jdownloader
     jupyterlab
+    libreoffice
     librewolf
     logseq
+    loom
     macupdater
+    melodics
     metasploit
     microsoft-edge
     microsoft-openjdk
+    milanote
+    multiapp
     netron
     openlens
     openshift-client
     opera
     opera-gx
+    orbstack
     osu
     pitch
     plex
     plex-htpc
     plex-media-server
+    postman
     purei-play
     puzzles
-    readdle-spark
-    rewind
-    remotion
-    rive
     qownnotes
+    qqlive
     quarto
+    readdle-spark
+    reader
+    reaper
+    rewind
+    rive
+    segger-jlink
     setapp
-    sfdx
+    sf
+    sfm
     shapr3d
     sigmaos
     signal
@@ -87,19 +121,26 @@ env:
     spotify
     standard-notes
     stats
+    teamviewer
     telegram
     telegram-desktop
     teleport-connect
+    termius
+    thunderbird
     todoist
     tor-browser
     trader-workstation
     trainerroad
     tsh
+    tuist
+    unity
     uvtools
     viber
     visual-studio-code
+    vivaldi
     vrew
     vscodium
+    vuescan
     warp
     webcatalog
     webull
