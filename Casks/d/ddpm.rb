@@ -1,19 +1,22 @@
 cask "ddpm" do
-  version "1.2.0.0052"
-  sha256 "53faf376738a35a8f1af6f4ba48ea18986d885f032ca89911172f6e6e1b4c58b"
+  version "1.3.0.0029"
+  sha256 "f86a3346663c817147fa8db263f5a5157f221b133dd15da556a828fc17dd066d"
 
-  url "https://dl.dell.com/FOLDER10656664M/1/DDPMv#{version}.zip"
+  url "https://www.delldisplaymanagermac.com/DDPM/DDPMv#{version}.zip",
+      verified: "delldisplaymanagermac.com/"
   name "DDPM"
   name "Dell Display and Peripheral Manager"
   desc "Monitors and peripherals manager"
   homepage "https://dell.com/"
 
   livecheck do
-    url "https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=3v8tw"
-    regex(/ddpmv(\d+(?:\.\d+)+)\.zip/i)
+    url "https://www.delldisplaymanagermac.com/DDPM/ddpm.json"
+    strategy :json do |json|
+      json.dig("versionTable", "*", "originVersion")
+    end
   end
 
-  pkg "DDPMv#{version}/DDPM_Installer.pkg"
+  pkg "DDPM_Installer.pkg"
   binary "/Applications/DDPM/DDPM.app/Contents/MacOS/DDPM"
 
   uninstall pkgutil: "Qisda.pkg.DDPM",

@@ -1,18 +1,19 @@
 cask "sonarr" do
   arch arm: "arm64", intel: "x64"
 
-  version "4.0.0.748"
-  sha256 arm:   "4f6cfa4a0451079df914d20ed695fbf7f5ba2a5014788f8833ee16ce57d1b54a",
-         intel: "c5e1c185edcd0bd3cc410ceb390c6f3ea68601124f2cdc45b2fc6b3e1f0b266f"
+  version "4.0.3.1413"
+  sha256 arm:   "195acc0c8b2ef2f0d48efda103ce1b6b6c5d39fee7dab1172ad303ac44c70dd0",
+         intel: "5a8af11162d413c83fb642a09ef635591f72258036a524003f52d01b750fd519"
 
-  url "https://download.sonarr.tv/v#{version.major}/main/#{version}/Sonarr.main.#{version}.osx-#{arch}-app.zip"
+  url "https://github.com/Sonarr/Sonarr/releases/download/v#{version}/Sonarr.main.#{version}.osx-#{arch}-app.zip",
+      verified: "github.com/Sonarr/Sonarr/"
   name "Sonarr"
   desc "PVR for Usenet and BitTorrent users"
   homepage "https://sonarr.tv/"
 
   livecheck do
-    url "https://download.sonarr.tv/v4/main/"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url :url
+    strategy :github_latest
   end
 
   auto_updates true

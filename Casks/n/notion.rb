@@ -2,14 +2,14 @@ cask "notion" do
   arch arm: "-arm64"
   livecheck_folder = on_arch_conditional arm: "arm64", intel: "latest"
 
-  version "3.1.1"
-  sha256 arm:   "8355c50ba835f1c06ac3ebb9cb0909e15e0a574d4a9e4f3f13dea565ac00533c",
-         intel: "caaedb39343ebdd5edcc8090fff8fb18fbc07beb78ae9a1c2dc08b7acefcb676"
+  version "3.4.1"
+  sha256 arm:   "0c6b3d1e771899a593349cac065f77f50e6e890c04a780e5d5ddbbb072e1a6eb",
+         intel: "3381def6356216ff53a50c7f22cbeca60b7524a59f144e68cf4e6bb753299ad7"
 
   url "https://desktop-release.notion-static.com/Notion-#{version}#{arch}.dmg",
       verified: "desktop-release.notion-static.com/"
   name "Notion"
-  desc "App to write, plan, collaborate, and get organized"
+  desc "App to write, plan, collaborate, and get organised"
   homepage "https://www.notion.so/"
 
   livecheck do

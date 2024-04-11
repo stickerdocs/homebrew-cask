@@ -2,9 +2,9 @@ cask "github" do
   arch arm: "arm64", intel: "x64"
   platform = on_arch_conditional arm: "darwin-arm64", intel: "darwin"
 
-  version "3.3.8-48bb7059"
-  sha256 arm:   "448dda7dbd3920da2a8a4e90b7efd52d1b9fc84275ed6b01f078fd000dea0d1f",
-         intel: "d736fe64e6bcc065a7a55df213623cd6005ca1086e97892a0c736b3c468cd965"
+  version "3.3.13-1b0804db"
+  sha256 arm:   "6ef292556a2e8db99ca62d703b49fad3308a6a3eef0df7fd63fa139fcb315891",
+         intel: "df85436557e7b3d709cc702b751f180f48655a3241cce6a864e55cf5161d9a7a"
 
   url "https://desktop.githubusercontent.com/github-desktop/releases/#{version}/GitHubDesktop-#{arch}.zip",
       verified: "desktop.githubusercontent.com/github-desktop/"
@@ -33,10 +33,12 @@ cask "github" do
         "~/Library/Application Support/ShipIt_stdout.log",
         "~/Library/Caches/com.github.GitHubClient",
         "~/Library/Caches/com.github.GitHubClient.ShipIt",
+        "~/Library/HTTPStorages/com.github.GitHubClient",
         "~/Library/Logs/GitHub Desktop",
         "~/Library/Preferences/ByHost/com.github.GitHubClient.ShipIt.*.plist",
         "~/Library/Preferences/com.github.GitHubClient.helper.plist",
         "~/Library/Preferences/com.github.GitHubClient.plist",
+        "~/Library/Saved Application State/com.github.GitHubClient.savedState",
       ],
       rmdir: "~/.config/git"
 end

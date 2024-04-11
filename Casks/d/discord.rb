@@ -1,6 +1,6 @@
 cask "discord" do
-  version "0.0.293"
-  sha256 "c6643ec3b15ff07987bf3e8f83cb9d1650b495f6a3af18b16187d48ca27d3bb8"
+  version "0.0.300"
+  sha256 "7fd6089734444b3cf1b43f7fbacd4363969cbb61d8a3e52bc12ec65a4f51c029"
 
   url "https://dl.discordapp.net/apps/osx/#{version}/Discord.dmg",
       verified: "dl.discordapp.net/"
@@ -14,6 +14,7 @@ cask "discord" do
   end
 
   auto_updates true
+  depends_on macos: ">= :catalina"
 
   app "Discord.app"
 

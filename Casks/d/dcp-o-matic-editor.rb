@@ -1,10 +1,10 @@
 cask "dcp-o-matic-editor" do
-  version "2.16.75"
-  sha256 "5ef69bb29e914833acf91043b1ff5b2d1a1bb2ee3915b5bae82fd6138ad628f7"
+  version "2.16.79"
+  sha256 "709ea55cd912d12d3d8ed00c29620571d6611ad2f7797ad4ed8fe78e00ffc7b5"
 
   url "https://dcpomatic.com/dl.php?id=osx-10.10-editor&version=#{version}"
   name "DCP-o-matic Editor"
-  desc "Convert video, audio and subtitles into DCP (Digital Cinema Democratized)"
+  desc "Convert video, audio and subtitles into DCP (Digital Cinema Package)"
   homepage "https://dcpomatic.com/"
 
   livecheck do

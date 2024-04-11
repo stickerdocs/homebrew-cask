@@ -1,13 +1,13 @@
 cask "visual-paradigm-ce" do
   arch arm: "AArch64", intel: "WithJRE"
 
-  version "17.1,20240201"
-  sha256 arm:   "e16f9125300123a26880ff155d4bfd20963454c57dd5b37d2b3b61d3275f543f",
-         intel: "179efb4f94280a5ba3d3dcd73bed3a74b91b00598215f7ab4233b1e6c65f9d95"
+  version "17.1,20240307"
+  sha256 arm:   "5fc3d23e5e0321700c8589047451b4e8e9aa08c98009cfc15064088b3ad4e99b",
+         intel: "a7939a4fdd422cbf36b97c03eebb584c6368c86de994cf0f5886a4ad4ec0f376"
 
   url "https://www.visual-paradigm.com/downloads/vpce/Visual_Paradigm_CE_#{version.csv.first.dots_to_underscores}_#{version.csv.second}_OSX_#{arch}.dmg"
   name "Visual Paradigm Community Edition"
-  desc "All-in-one UML, SysML, BPMN Modeling Platform for Agile"
+  desc "UML, SysML, BPMN modelling platform"
   homepage "https://www.visual-paradigm.com/"
 
   livecheck do

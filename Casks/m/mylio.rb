@@ -1,11 +1,11 @@
 cask "mylio" do
-  version "24.1.7711"
+  version "24.2.7731"
   sha256 :no_check
 
   url "https://myliodownloads.com/Mylio.dmg",
       verified: "myliodownloads.com/"
   name "Mylio"
-  desc "Photo organizer"
+  desc "Photo organiser"
   homepage "https://mylio.com/"
 
   livecheck do

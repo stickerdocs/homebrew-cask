@@ -1,6 +1,6 @@
 cask "streammusic" do
-  version "1.2.3"
-  sha256 "f1ad3b5d5bdee153fcff0a5e478a2e6c550acec2d9a0f76f7e1a21f85165c8fd"
+  version "1.2.7"
+  sha256 "8934b389bd0f046a8dde3b8d6f317b3625192395481da38e0fe4e94853016a06"
 
   url "https://oss.aqzscn.cn/stream-music/versions/#{version}/%E9%9F%B3%E6%B5%81v#{version}.dmg"
   name "StreamMusic"

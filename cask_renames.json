@@ -1,6 +1,9 @@
 {
   "ankerslicer": "ankermake",
+  "ankiapp-anki": "ankiapp",
+  "autodesk-fusion360": "autodesk-fusion",
   "betterdummy": "betterdisplay",
+  "clinq": "sipgate-clinq",
   "cloudapp": "zight",
   "cron": "notion-calendar",
   "emby-server": "embyserver",
@@ -8,8 +11,10 @@
   "figmadaemon": "figma-agent",
   "fly-key": "flykey",
   "hepta": "heptabase",
+  "hma-pro-vpn": "hma-vpn",
   "mat": "memoryanalyzer",
   "mouse-fix": "mac-mouse-fix",
+  "mpv": "stolendata-mpv",
   "mysteriumvpn": "mysteriumdark",
   "obsbot-webcam": "obsbot-center",
   "opal": "opal-composer",
@@ -18,5 +23,6 @@
   "remotion": "multiapp",
   "streamlabs-obs": "streamlabs",
   "tea": "ossapp",
-  "tibco-jaspersoft-studio": "jaspersoft-studio"
+  "tibco-jaspersoft-studio": "jaspersoft-studio",
+  "tutanota": "tuta-mail"
 }

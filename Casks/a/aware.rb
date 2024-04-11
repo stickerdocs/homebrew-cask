@@ -1,6 +1,6 @@
 cask "aware" do
-  version "1.0.6"
-  sha256 "d987999711365f0d925a8e64da8122e1ae501e45e6782fa093264180b0e32b45"
+  version "1.1.1"
+  sha256 "d436d21ca4915feaa5b34426dc82c9c3a90d78cce8792506be4d3c9c13ff1ada"
 
   url "https://github.com/josh/Aware/releases/download/v#{version}/Aware.zip",
       verified: "github.com/josh/Aware/"
@@ -8,7 +8,12 @@ cask "aware" do
   desc "Menubar app to track active computer use"
   homepage "https://awaremac.com/"
 
-  deprecate! date: "2023-12-17", because: :discontinued
+  depends_on macos: ">= :ventura"
 
   app "Aware.app"
+
+  zap trash: [
+    "~/Library/Application Scripts/com.awaremac.Aware",
+    "~/Library/Containers/com.awaremac.Aware",
+  ]
 end

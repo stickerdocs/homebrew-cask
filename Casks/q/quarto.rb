@@ -1,6 +1,6 @@
 cask "quarto" do
-  version "1.4.549"
-  sha256 "49d5f85a2d912cad03ed1be4ff8036a16e757e7d9a2d0a1bc2671184b2214074"
+  version "1.4.553"
+  sha256 "5416b9e9fdee84cf3c66a582c11ba8498c6539aaa9cb30503b0d293c558722c9"
 
   url "https://github.com/quarto-dev/quarto-cli/releases/download/v#{version}/quarto-#{version}-macos.pkg",
       verified: "github.com/quarto-dev/quarto-cli/"
@@ -19,5 +19,9 @@ cask "quarto" do
 
   uninstall pkgutil: "org.rstudio.quarto"
 
-  zap trash: "~/Library/Caches/quarto"
+  zap trash: [
+    "~/Library/Application Support/quarto",
+    "~/Library/Application Support/quarto-writer",
+    "~/Library/Caches/quarto",
+  ]
 end

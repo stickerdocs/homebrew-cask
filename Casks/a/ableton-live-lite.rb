@@ -1,6 +1,6 @@
 cask "ableton-live-lite" do
-  version "11.3.21"
-  sha256 "a1e371486a9b2aa0f9f68efde14dde67a52539c12d4d4270d6bd80084b9a48dc"
+  version "12.0.1"
+  sha256 "d54e275ec1b34d0181ebc17218bcfa57dff4455bd1027547b6de6f77a45068f5"
 
   url "https://cdn-downloads.ableton.com/channels/#{version}/ableton_live_lite_#{version}_universal.dmg"
   name "Ableton Live Lite"
@@ -12,7 +12,7 @@ cask "ableton-live-lite" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :big_sur"
 
   app "Ableton Live #{version.major} Lite.app"
 

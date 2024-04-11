@@ -1,6 +1,6 @@
 cask "freetube" do
-  version "0.19.1"
-  sha256 "4a8f77000e01a6123a3252f5217744d6e9836f78642c222081917e2318fa1c60"
+  version "0.20.0"
+  sha256 "bc94c5b06bbf2480e2fee9e5ddbf4274903eaf510d4d8ce87ba84de0ed040e59"
 
   url "https://github.com/FreeTubeApp/FreeTube/releases/download/v#{version}-beta/freetube-#{version}-mac-x64.dmg"
   name "FreeTube"
@@ -12,11 +12,20 @@ cask "freetube" do
     regex(/^v?(\d+(?:\.\d+)+)/i)
   end
 
+  depends_on macos: ">= :high_sierra"
+
   app "FreeTube.app"
 
+  uninstall quit: "io.freetubeapp.freetube"
+
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/io.freetubeapp.freetube.sfl*",
     "~/Library/Application Support/FreeTube",
     "~/Library/Preferences/io.freetubeapp.freetube.plist",
     "~/Library/Saved Application State/io.freetubeapp.freetube.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

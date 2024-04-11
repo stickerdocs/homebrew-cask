@@ -1,14 +1,14 @@
 cask "joplin" do
   arch arm: "-arm64"
 
-  version "2.13.15"
-  sha256 arm:   "e822976bfb5de7aecdb734d5ee5694ee5f71c3c58e07d45947a235bd778bbb2a",
-         intel: "30504e600eb0780c062e9fdecdf539f11bd2946145964834165731eb8abb5a8f"
+  version "2.14.20"
+  sha256 arm:   "961df5860434fd6c1cad7dadfe86d2cd749f9fbc2f2d8d9798af1462c82b3e75",
+         intel: "5f8c25126dcfea074e758fbb1650a7d46ce605c05a4f9522a15f5096cdfeb649"
 
   url "https://github.com/laurent22/joplin/releases/download/v#{version}/Joplin-#{version}#{arch}.DMG",
       verified: "github.com/laurent22/joplin/"
   name "Joplin"
-  desc "Note taking and to-do application with synchronization capabilities"
+  desc "Note taking and to-do application with synchronisation capabilities"
   homepage "https://joplinapp.org/"
 
   livecheck do

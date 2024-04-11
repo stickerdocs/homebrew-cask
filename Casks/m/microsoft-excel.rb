@@ -48,8 +48,8 @@ cask "microsoft-excel" do
     end
   end
   on_monterey :or_newer do
-    version "16.81.24011420"
-    sha256 "d252df9f51fdefb76bcf0747719e2943712f82ac6e977ff682af8237d47ae4dd"
+    version "16.83.24031120"
+    sha256 "6ce7b7d0cadd8a0cc69335d7c6a86b5fd1e8cbe7ea3f115b023953177906b119"
 
     livecheck do
       url "https://go.microsoft.com/fwlink/p/?linkid=525135"

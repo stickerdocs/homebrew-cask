@@ -88,8 +88,8 @@ cask "cocktail" do
     end
   end
   on_sonoma :or_newer do
-    version "17.0.5"
-    sha256 "59138ee8b8806fce21447ff90498887dada5f0ae78791fff182ede2c211f68e0"
+    version "17.1.1"
+    sha256 "cd1de2561de983b5cbc9a029f349e779f09c0fd4ec531224ec598442ae7d24f9"
 
     url "https://www.maintain.se/downloads/Cocktail#{version.major}SE.dmg"
 
@@ -100,7 +100,7 @@ cask "cocktail" do
   end
 
   name "Cocktail"
-  desc "Cleans, repairs and optimizes computer systems"
+  desc "Cleans, repairs and optimises computer systems"
   homepage "https://www.maintain.se/cocktail/"
 
   app "Cocktail.app"

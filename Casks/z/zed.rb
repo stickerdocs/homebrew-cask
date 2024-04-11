@@ -1,8 +1,11 @@
 cask "zed" do
-  version "0.121.7"
-  sha256 "ff2437f1dade4cb13f506170f44a24e00ec07c59da7f412f601e8998de563517"
+  arch arm: "aarch64", intel: "x86_64"
 
-  url "https://zed.dev/api/releases/stable/#{version}/Zed.dmg"
+  version "0.130.5"
+  sha256 arm:   "cb5ca484bb64e8c102ff8c30e5f2b0da01d122206c2e8c05914aa5a168780b7b",
+         intel: "2df40bb5d3b56d0e2226a03bc12e9a4c1ca6e6499d431f29f3589c96bd8246dd"
+
+  url "https://zed.dev/api/releases/stable/#{version}/Zed-#{arch}.dmg"
   name "Zed"
   desc "Multiplayer code editor"
   homepage "https://zed.dev/"
@@ -13,16 +16,19 @@ cask "zed" do
   end
 
   auto_updates true
-  conflicts_with cask: "zed-preview"
   depends_on macos: ">= :catalina"
 
   app "Zed.app"
   binary "#{appdir}/Zed.app/Contents/MacOS/cli", target: "zed"
 
   zap trash: [
-    "~/.config/Zed",
+    "~/.config/zed",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/dev.zed.zed.sfl*",
     "~/Library/Application Support/Zed",
+    "~/Library/Caches/dev.zed.Zed",
+    "~/Library/HTTPStorages/dev.zed.Zed",
     "~/Library/Logs/Zed",
+    "~/Library/Preferences/dev.zed.Zed.plist",
     "~/Library/Saved Application State/dev.zed.Zed.savedState",
   ]
 end

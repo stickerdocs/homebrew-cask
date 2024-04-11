@@ -1,11 +1,11 @@
 cask "remote-desktop-manager" do
-  version "2023.3.12.3"
-  sha256 "9c387d345dd3eeb468d18227ac57be04bf3588bfe198bf82bfebadff3ff9db3a"
+  version "2024.1.7.2"
+  sha256 "a176dbde0533d1cae02ce1dca84a04d1f8a4e1c5e7e943a1e53a19fc2f58aa35"
 
   url "https://cdn.devolutions.net/download/Mac/Devolutions.RemoteDesktopManager.Mac.#{version}.dmg",
       verified: "cdn.devolutions.net/download/Mac/"
   name "Remote Desktop Manager"
-  desc "Centralizes all remote connections on a single platform"
+  desc "Centralises all remote connections on a single platform"
   homepage "https://mac.remotedesktopmanager.com/"
 
   livecheck do

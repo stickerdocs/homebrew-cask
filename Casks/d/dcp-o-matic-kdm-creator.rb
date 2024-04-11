@@ -1,10 +1,10 @@
 cask "dcp-o-matic-kdm-creator" do
-  version "2.16.75"
-  sha256 "9a104917daa3f2af324b249b483d84cd91d775311f509ae0afe7174e7307ed4f"
+  version "2.16.79"
+  sha256 "eab51f46d3e66e3d79109e43c95b639fe38038e5d9c15f4e4093676497c2e37b"
 
   url "https://dcpomatic.com/dl.php?id=osx-10.10-kdm&version=#{version}"
   name "DCP-o-matic KDM Creator"
-  desc "Convert video, audio and subtitles into DCP (Digital Cinema Democratized)"
+  desc "Convert video, audio and subtitles into DCP (Digital Cinema Package)"
   homepage "https://dcpomatic.com/"
 
   livecheck do

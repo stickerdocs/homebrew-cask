@@ -1,8 +1,9 @@
 cask "subsurface" do
-  version "6.0.5082"
-  sha256 "03d39ac7c77aaa5e8bbaf6aeb1b201c78873f463f0bb732b6287fb587c3a5417"
+  version "6.0.5112"
+  sha256 "5dfd3a2133d4e35d4e92d46fb005c0220f79906591834497d0066190bcbe22c0"
 
-  url "https://subsurface-divelog.org/downloads/Subsurface-#{version}-CICD-release.dmg"
+  url "https://subsurface-divelog.org/downloads/Subsurface-#{version}-CICD-release.dmg",
+      user_agent: :fake
   name "Subsurface"
   desc "Open source divelog program"
   homepage "https://subsurface-divelog.org/"

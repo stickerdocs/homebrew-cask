@@ -1,9 +1,9 @@
 cask "wondershare-uniconverter" do
   arch arm: "arm_"
 
-  version "15.5.1"
-  sha256 arm:   "e07e9823648f0ab3a4526ff5eea1a2655737380e117ac3c41433d37a626bc747",
-         intel: "b66d83218375cd831400806155d6dc1f2236dc0625628b7cfac934288e3a44e5"
+  version "15.5.5"
+  sha256 arm:   "b180c3dc393f799e084778a9e9716d289f954c04f303912a68734cd78fccd4e8",
+         intel: "173289151db8a100b5b4ef6c85ec8c4da8151a0895e840ba728db875ced16223"
 
   url "https://download.wondershare.com/cbs_down/uniconverter#{version.major}-mac_#{arch}#{version}_full14207.zip"
   name "UniConverter"

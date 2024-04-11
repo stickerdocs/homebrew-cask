@@ -1,9 +1,8 @@
 cask "dehelper" do
-  version "4.6.1,2024-01-09"
-  sha256 "e20a93c9f00fae04038a9efe157563e084ccbcfa69b97265c8cbfdf241c612d7"
+  version "4.6.0"
+  sha256 :no_check
 
-  url "https://static.frdic.com/pkg/dhmac.dmg?v=#{version.csv.second}",
-      verified:   "static.frdic.com/",
+  url "https://static.eudic.net/pkg/dhmac.dmg",
       user_agent: :fake
   name "Dehelper"
   name "德语助手"
@@ -11,17 +10,8 @@ cask "dehelper" do
   homepage "https://www.eudic.net/v#{version.major}/de/app/dehelper"
 
   livecheck do
-    url "https://www.eudic.net/update/dehelper_mac.xml"
-    regex(/href=.*?dhmac\.dmg\?v=(\d+(?:-\d+)+)/i)
-    strategy :sparkle do |item, regex|
-      download_page = Homebrew::Livecheck::Strategy.page_content("https://www.eudic.net/v4/de/app/download")
-      next if download_page[:content].blank?
-
-      match = download_page[:content].match(regex)
-      next if match.blank?
-
-      "#{item.short_version},#{match[1]}"
-    end
+    url "https://static.eudic.net/pkg/dehelper_mac.xml"
+    strategy :sparkle, &:short_version
   end
 
   depends_on macos: ">= :high_sierra"

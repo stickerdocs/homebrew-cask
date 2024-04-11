@@ -1,9 +1,9 @@
 cask "imhex" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "1.32.2"
-  sha256 arm:   "f49acd76bd683b1f6c2f3df6b6a272ad5f003275db768643d716505a900e83a0",
-         intel: "8b9df7832c4cd6c329a19dfad0d89d6db0f0bcb562d8a1ec45241289f093942c"
+  version "1.33.2"
+  sha256 arm:   "7b61556864d8156801364213e33b463e50373d49d77565cca9e68687bef5e0e2",
+         intel: "97e59c85cb8ebc8bcd5b413ec09c6e462ee4e72a191474df53174e10b35be831"
 
   url "https://github.com/WerWolv/ImHex/releases/download/v#{version}/imhex-#{version}-macOS-#{arch}.dmg",
       verified: "github.com/WerWolv/ImHex/"

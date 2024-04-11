@@ -1,6 +1,6 @@
 cask "herd" do
-  version "1.4.0"
-  sha256 "0a8f78594ab0ff7ed5f163767406ff4552159917d4a647d3328a23e5f4553f39"
+  version "1.5.0"
+  sha256 "3a31161f7b3c6cc757d96e02ae521ba51e45811294cf29d62dedb0c81e545406"
 
   url "https://download.herdphp.com/app_versions/Herd_#{version}.dmg",
       verified: "download.herdphp.com/app_versions/"
@@ -13,6 +13,7 @@ cask "herd" do
     strategy :sparkle, &:short_version
   end
 
+  auto_updates true
   depends_on macos: ">= :monterey"
 
   app "Herd.app"

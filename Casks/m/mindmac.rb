@@ -1,12 +1,17 @@
 cask "mindmac" do
-  version "1.8.20"
-  sha256 "155ac882633084b0e545fecb592a5ce93d932d3c7a52a59bda86264c6314371a"
+  version "1.9.7"
+  sha256 "ffcb8277df33b86940aa62a6aa95c3319f969271922ba5cff62baf58b80c7b98"
 
   url "https://github.com/MindMacApp/MindMac/releases/download/#{version}/MindMac_#{version}.dmg",
       verified: "github.com/MindMacApp/MindMac/"
   name "MindMac"
   desc "ChatGPT client"
   homepage "https://mindmac.app/"
+
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   depends_on macos: ">= :ventura"
 

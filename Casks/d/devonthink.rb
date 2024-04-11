@@ -1,10 +1,10 @@
 cask "devonthink" do
-  version "3.9.4"
-  sha256 "15038b2f63b4b3a890710d60f6d6e9c5c8686f532452af68a2cf72dd28cd2a7f"
+  version "3.9.6"
+  sha256 "e272af94a61619adaf729de336e1ef24465a5e6ff27ed6ae8cb11d28ca35638a"
 
   url "https://download.devontechnologies.com/download/devonthink/#{version}/DEVONthink_#{version.major}.app.zip"
   name "DEVONthink"
-  desc "Collect, organize, edit and annotate documents"
+  desc "Collect, organise, edit and annotate documents"
   homepage "https://www.devontechnologies.com/apps/devonthink/"
 
   livecheck do

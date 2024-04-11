@@ -1,9 +1,9 @@
 cask "alex313031-thorium" do
-  arch arm: "ARM", intel: "X64"
+  arch arm: "ARM64", intel: "X64"
 
-  version "M120.0.6099.235"
-  sha256 arm:   "d4f43f5fabd22d55db0869fa8cf951da2af71764069139a4c3679bd58f7a246c",
-         intel: "a088ebdbbbce5957762bf01a393067da54b2ddcc4f93474b8fd44adb2d503d49"
+  version "M122.0.6261.132"
+  sha256 arm:   "fffd61677db27fb15fb91a4d3b8a12c379d23edc315d1e4dd8fd29ebbe9b21ff",
+         intel: "baf7b11ccde3f5b06fdffde742d2b30b754ce661c21c7d0d63a21379762a912d"
 
   url "https://github.com/Alex313031/Thorium-MacOS/releases/download/#{version}/Thorium_MacOS_#{arch}.dmg",
       verified: "github.com/Alex313031/Thorium-MacOS/"

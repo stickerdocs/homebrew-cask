@@ -16,8 +16,8 @@ cask "sip" do
     end
   end
   on_mojave :or_newer do
-    version "3.3.3"
-    sha256 "74de55c531f0e8a3e78e016a14cd406eb8aa2964430168182ac82bd74ce57552"
+    version "3.4.1"
+    sha256 "88f4e1d07f8c3b54e461403d9ac4a669991e5bdfeaa75dd860a766d2ba769e56"
 
     livecheck do
       url "https://sipapp.io/updates/"
@@ -28,7 +28,7 @@ cask "sip" do
   url "https://sipapp.fra1.digitaloceanspaces.com/updates/v#{version.major}/sip-#{version}.dmg",
       verified: "sipapp.fra1.digitaloceanspaces.com/updates/"
   name "Sip"
-  desc "Collect, organize & share colors"
+  desc "Collect, organise & share colours"
   homepage "https://sipapp.io/"
 
   auto_updates true

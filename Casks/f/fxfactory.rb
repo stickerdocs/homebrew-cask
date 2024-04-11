@@ -1,11 +1,11 @@
 cask "fxfactory" do
-  version "8.0.12,7733"
-  sha256 "555651d8549a69d64269d51b9d00f83d51893fd2a0c61dc82d71f30769a76d25"
+  version "8.0.15,7816"
+  sha256 "a1926e27fa938eb89c6e674d9c84c648879302444464f2ece9f2e3c8ecf4eab5"
 
   url "https://fxfactory.s3.amazonaws.com/noiseindustries/fxfactory/FxFactory-#{version.csv.first}-#{version.csv.second}.zip",
       verified: "fxfactory.s3.amazonaws.com/noiseindustries/"
   name "FxFactory"
-  desc "Browse, install and purchase effects and plugins from a huge catalog"
+  desc "Browse, install and purchase effects and plugins from a huge catalogue"
   homepage "https://fxfactory.com/"
 
   livecheck do

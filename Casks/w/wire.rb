@@ -1,6 +1,6 @@
 cask "wire" do
-  version "3.34.4697"
-  sha256 "14c7347dd958faa8abe04e870e8a4bd37689e9966b21a0ba25f19b98feb11676"
+  version "3.35.4861"
+  sha256 "40fc6c94c133d63387d8b71e14e742c950eda726b549f27c1963080088627b85"
 
   url "https://github.com/wireapp/wire-desktop/releases/download/macos%2F#{version}/Wire.pkg",
       verified: "github.com/wireapp/wire-desktop/"
@@ -8,9 +8,21 @@ cask "wire" do
   desc "Collaboration platform focusing on security"
   homepage "https://wire.com/"
 
+  # Not every GitHub release provides a file for macOS, so we check multiple
+  # recent releases instead of only the "latest" release.
   livecheck do
     url :url
     regex(%r{^macos[/._-]v?(\d+(?:\.\d+)+)$}i)
+    strategy :github_releases do |json, regex|
+      json.map do |release|
+        next if release["draft"] || release["prerelease"]
+
+        match = release["tag_name"]&.match(regex)
+        next if match.blank?
+
+        match[1]
+      end.flatten
+    end
   end
 
   pkg "Wire.pkg"

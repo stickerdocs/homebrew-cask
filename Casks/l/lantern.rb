@@ -1,5 +1,5 @@
 cask "lantern" do
-  version "7.8.0"
+  version "7.8.4"
   sha256 :no_check
 
   url "https://s3.amazonaws.com/lantern/lantern-installer.dmg",
@@ -24,6 +24,8 @@ cask "lantern" do
             quit:      "com.getlantern.lantern"
 
   zap trash: [
+    "~/Library/Application Support/byteexec/lantern",
+    "~/Library/Application Support/byteexec/sysproxy-cmd",
     "~/Library/Application Support/Lantern",
     "~/Library/Logs/Lantern",
   ]

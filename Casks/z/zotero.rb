@@ -1,19 +1,20 @@
 cask "zotero" do
-  version "6.0.30"
-  sha256 "277131e1783ee139a1068ba17a08326f3b12d1156e594c5737af80e6a4e05cfe"
+  version "6.0.37"
+  sha256 "b050f0a776122c114c22ba7ef0e0430c524a8fb189dd68cc73627612a3d140d5"
 
   url "https://download.zotero.org/client/release/#{version}/Zotero-#{version}.dmg"
   name "Zotero"
-  desc "Collect, organize, cite, and share research sources"
+  desc "Collect, organise, cite, and share research sources"
   homepage "https://www.zotero.org/"
 
   livecheck do
     url "https://www.zotero.org/download/"
-    regex(/standaloneVersions.*?"mac"\s*:\s*"(\d+(?:\.\d+)*)"/i)
+    regex(/standaloneVersions.*?"mac"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 
   auto_updates true
-  conflicts_with cask: "homebrew/cask-versions/zotero-beta"
+  conflicts_with cask: "zotero-beta"
+  depends_on macos: ">= :el_capitan"
 
   app "Zotero.app"
 

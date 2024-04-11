@@ -1,10 +1,10 @@
 cask "115" do
-  version "2.0.6.6"
-  sha256 "a720caa14db8f5e0c0c4feb9fd339e5920ce2142f6867f218abdb53049e734e3"
+  version "2.0.9.3"
+  sha256 "fba0be9bb046ad28d615a1927a0934cbcbe2809b9c70e854fedf2b6bc611d3ad"
 
   url "https://down.115.com/client/115pc/mac/115pc_#{version}.dmg"
   name "115"
-  name "115电脑版"
+  name "115桌面版"
   desc "Client for the 115 cloud storage service"
   homepage "https://pc.115.com/index.html#mac"
 
@@ -18,7 +18,7 @@ cask "115" do
   auto_updates true
   depends_on macos: ">= :high_sierra"
 
-  app "115电脑版.app"
+  app "115生活.app"
 
   uninstall quit: "org.115pc.115Desktop"
 

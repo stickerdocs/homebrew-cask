@@ -1,9 +1,9 @@
 cask "p4" do
+  # NOTE: "4" is not a version number, but an intrinsic part of the product name
   arch arm: "12arm64", intel: "1015x86_64"
 
-  version "2023.2,2535420"
-  sha256 arm:   "00264b87bf4ebb26286bc089fc0686d913d921b9b39bc67bf436af3702ac18b1",
-         intel: "8a24804e48247104a1e59e99620e57bbe456018fef84b2dff911175908057017"
+  version "2023.2,2578891"
+  sha256 :no_check
 
   url "https://filehost.perforce.com/perforce/r#{version.major[-2..]}.#{version.minor}/bin.macosx#{arch}/p4"
   name "Perforce Helix Command-Line Client (P4)"

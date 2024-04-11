@@ -2,12 +2,12 @@ cask "feishu" do
   arch arm: "arm64", intel: "x64"
 
   on_arm do
-    version "7.10.7,2752fd73"
-    sha256 "c10f8812f22e57b0ad3c0dfe4c5d79202f1a93958b547ebaabcf21085e98344e"
+    version "7.14.4,f8270390"
+    sha256 "88a4dcf7eddfed24334faf8b5dc01d0d78b6dc8230a0d311a0ebe0e781ccb822"
   end
   on_intel do
-    version "7.10.7,c3f7bede"
-    sha256 "8c59da139005ab0c35042eba7b742eb65dc9f65eb62eb6eb3f20928d53bf531e"
+    version "7.14.4,9626314a"
+    sha256 "fe33676ef85893aae6f63293b7be13d2a3925da9b7796526e0411b0ed1396551"
   end
 
   url "https://sf3-cn.feishucdn.com/obj/ee-appcenter/#{version.csv.second}/Feishu-darwin_#{arch}-#{version.csv.first}-signed.dmg",

@@ -1,9 +1,9 @@
 cask "jupyterlab" do
   arch arm: "arm64", intel: "x64"
 
-  version "4.1.0-1"
-  sha256 arm:   "8cffc21f7f38a2c00e0ba0ec1d00ca6898f48dc1a10ceed9b53e9d349ca4dc11",
-         intel: "c346ba2ce37ea2419e59c47c43ec7824a744e1c8122f44dd0821433160ba293f"
+  version "4.1.5-1"
+  sha256 arm:   "a4083e5364cb6ae9e32194023968bae906a548f9eb62d5d5d2ebad4470ba7d6e",
+         intel: "86d1ab7bd5d59067ebbef0c7e3ef823270136469f3269a024ff463ebec0ac11b"
 
   url "https://github.com/jupyterlab/jupyterlab-desktop/releases/download/v#{version}/JupyterLab-Setup-macOS-#{arch}.dmg"
   name "JupyterLab App"

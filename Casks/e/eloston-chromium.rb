@@ -1,15 +1,15 @@
 cask "eloston-chromium" do
   arch arm: "arm64", intel: "x86-64"
 
-  version "121.0.6167.139-1.1"
-  sha256 arm:   "ddbd49796596ae617880405464c0165a96504308a1c7af956d79d4692882fb3d",
-         intel: "8de026b042b01c191d969f387cce80e9377d3ccc1e5685785dee34ba5c045b31"
+  version "123.0.6312.105-1.1"
+  sha256 arm:   "e52da283ba20dcb656b721c8963af1387e5fad4c214bc89beb0c6fbac409e528",
+         intel: "b6cfa21d0022409a9b69f3e9d8acd29716ceaefd273e54ba1219072aca26929c"
 
   url "https://github.com/ungoogled-software/ungoogled-chromium-macos/releases/download/#{version}/ungoogled-chromium_#{version}_#{arch}-macos.dmg",
       verified: "github.com/ungoogled-software/ungoogled-chromium-macos/"
   name "Ungoogled Chromium"
   desc "Google Chromium, sans integration with Google"
-  homepage "https://ungoogled-software.github.io/ungoogled-chromium-binaries/"
+  homepage "https://ungoogled-software.github.io/"
 
   livecheck do
     url :url

@@ -1,6 +1,6 @@
 cask "nucleo" do
-  version "4.0.2"
-  sha256 "aebe29eba85195ec6546a62df8404f95207cd08a5539b65d1031ead1120c8368"
+  version "4.1.1"
+  sha256 "9498d88fc2fe8dd9aaac31b77569f68190e675be9d5a3fad7aa9ab3775d615f1"
 
   url "https://nucleo-app-releases.s3-accelerate.amazonaws.com/mac/Nucleo_#{version}.zip",
       verified: "nucleo-app-releases.s3-accelerate.amazonaws.com/"

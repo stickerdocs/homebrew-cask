@@ -1,10 +1,10 @@
 cask "crystalmaker" do
-  version "11.0.1"
+  version "11.0.2"
   sha256 :no_check
 
   url "https://crystalmaker.com/downloads/crystalmaker#{version.major}_mac.zip"
   name "CrystalMaker"
-  desc "Visualize crystal and molecular structures"
+  desc "Visualise crystal and molecular structures"
   homepage "https://crystalmaker.com/index.html"
 
   livecheck do

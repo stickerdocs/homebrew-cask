@@ -1,6 +1,6 @@
 cask "tsh" do
-  version "15.0.1"
-  sha256 "33ad118d8f8f743c256883fd76f4fe264cc3b7b0c554748097830b313ce23e81"
+  version "15.2.1"
+  sha256 "2159aea8324308166a08aee2142e05d2bd37ca1c2c62ac05ecc33022fb4f08b8"
 
   url "https://cdn.teleport.dev/tsh-#{version}.pkg",
       verified: "cdn.teleport.dev/"
@@ -13,7 +13,7 @@ cask "tsh" do
     regex(/tsh[._-]v?(\d+(?:\.\d+)+)\.pkg/i)
   end
 
-  conflicts_with cask:    "homebrew/cask-versions/tsh13",
+  conflicts_with cask:    "tsh13",
                  formula: "teleport"
 
   pkg "tsh-#{version}.pkg"

@@ -1,8 +1,11 @@
 cask "openlp" do
-  version "3.0.2"
-  sha256 "302b2b80c4a50fe810e206585ae2733025f167d843f46d354a510ad973118206"
+  arch arm: "arm64", intel: "x86_64"
 
-  url "https://get.openlp.org/#{version}/OpenLP-#{version}.dmg"
+  version "3.1.1"
+  sha256 arm:   "e5a30442924fd358d58fc854ac05bbd1e42c2773aad325c9e6b350520f99701d",
+         intel: "0893c466780eb28d663717c74b5ad1fde1bd6eeecfc395a34cbfdbb8420dde31"
+
+  url "https://get.openlp.org/#{version}/OpenLP-#{version}-#{arch}.dmg"
   name "OpenLP"
   desc "Worship presentation software"
   homepage "https://openlp.org/"

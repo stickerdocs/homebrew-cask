@@ -1,9 +1,9 @@
 cask "go-shiori" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "1.5.5"
-  sha256 arm:   "4594adfa928a090b7c2aa59f133aaf100bf12c3e2b03dc1d3111dce248d2e27f",
-         intel: "155abc39774ded50441d078d1e74163a46672c0635c42624232654269fe0abdf"
+  version "1.6.2"
+  sha256 arm:   "2932f36954c0977a557d0d60c09604a543166c8f4ae9e9f897fd1d23fa662326",
+         intel: "d0acaefd09231427d436b77ae9a8be2008c909989d9199c649c1159f91026567"
 
   url "https://github.com/go-shiori/shiori/releases/download/v#{version}/shiori_Darwin_#{arch}.tar.gz"
   name "Shiori"

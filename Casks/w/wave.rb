@@ -1,8 +1,8 @@
 cask "wave" do
-  version "0.6.1"
-  sha256 "4bf43780d04f8edbc651ce7c7ba75b5c63db15a36eb45bdae9510ef698dc5bc0"
+  version "0.7.2"
+  sha256 "2c3fc8351eda5b7be287cef2d738e6fdedc7f559470cf0fbbe7def68a63342af"
 
-  url "https://dl.waveterm.dev/builds/waveterm-macos-universal-v#{version}.dmg"
+  url "https://dl.waveterm.dev/releases/Wave-darwin-universal-#{version}.dmg"
   name "Wave Terminal"
   name "WaveTerm"
   desc "Terminal emulator"
@@ -10,9 +10,10 @@ cask "wave" do
 
   livecheck do
     url "https://www.waveterm.dev/download"
-    regex(/href=.*?waveterm.+?[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
+    regex(/href=.*?Wave.+?[._-]?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
+  auto_updates true
   depends_on macos: ">= :catalina"
 
   app "Wave.app"

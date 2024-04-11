@@ -7,11 +7,16 @@ require_relative "changed_files"
 module CiMatrix
   MAX_JOBS = 256
 
-  RUNNERS = {
+  # Weight for each arch must add up to 1.0.
+  INTEL_RUNNERS = {
     { symbol: :big_sur,  name: "macos-11", arch: :intel } => 0.0,
     { symbol: :monterey, name: "macos-12", arch: :intel } => 0.0,
     { symbol: :ventura,  name: "macos-13", arch: :intel } => 1.0,
   }.freeze
+  ARM_RUNNERS = {
+    { symbol: :sonoma,   name: "macos-14", arch: :arm   } => 1.0,
+  }.freeze
+  RUNNERS = INTEL_RUNNERS.merge(ARM_RUNNERS).freeze
 
   # This string uses regex syntax and is intended to be interpolated into
   # `Regexp` literals, so the backslashes must be escaped to be preserved.
@@ -58,12 +63,30 @@ module CiMatrix
         )
       end
     end
-    return filtered_runners unless filtered_runners.empty?
+    filtered_runners = RUNNERS.dup if filtered_runners.empty?
+
+    archs = architectures(cask_content:)
+    filtered_runners.select! do |runner, _|
+      archs.include?(runner.fetch(:arch))
+    end
 
     RUNNERS
   end
 
-  def self.random_runner(avalible_runners = RUNNERS)
+  def self.architectures(cask_content:)
+    case cask_content
+    when /depends_on\s+arch:\s+:arm64/
+      [:arm]
+    when /depends_on\s+arch:\s+:x86_64/
+      [:intel]
+    when /\barch\b/, /\bon_(arm|intel)\b/
+      [:arm, :intel]
+    else
+      RUNNERS.keys.map { |r| r.fetch(:arch) }.uniq.sort
+    end
+  end
+
+  def self.random_runner(avalible_runners = INTEL_RUNNERS)
     avalible_runners.max_by { |(_, weight)| rand ** (1.0 / weight) }
                     .first
   end
@@ -81,23 +104,14 @@ module CiMatrix
 
     if filtered_macos_found
       # If the cask varies on a MacOS version, test it on every possible macOS version.
-      filtered_runners.keys
+      [filtered_runners.keys, true]
     else
-      # Otherwise, select a runner based on weighted random sample.
-      [random_runner(filtered_runners)]
-    end
-  end
-
-  def self.architectures(cask_content:)
-    case cask_content
-    when /depends_on\s+arch:\s+:arm64/
-      [:arm]
-    when /depends_on\s+arch:\s+:x86_64/
-      [:intel]
-    when /\barch\b/, /\bon_(arm|intel)\b/
-      [:arm, :intel]
-    else
-      RUNNERS.keys.map { |r| r.fetch(:arch) }.uniq.sort
+      # Otherwise, select a runner from each architecture based on weighted random sample.
+      grouped_runners = filtered_runners.group_by { |runner, _| runner.fetch(:arch) }
+      selected_runners = grouped_runners.map do |_, runners|
+        random_runner(runners)
+      end
+      [selected_runners, false]
     end
   end
 
@@ -125,7 +139,7 @@ module CiMatrix
 
     cask_files_to_check = if cask_names.any?
       cask_names.map do |cask_name|
-        Cask::CaskLoader.load(cask_name).sourcefile_path.relative_path_from(tap.path)
+        Cask::CaskLoader.find_cask_in_tap(cask_name, tap).relative_path_from(tap.path)
       end
     else
       changed_files[:modified_cask_files]
@@ -159,12 +173,18 @@ module CiMatrix
                                bitbucket_repository]
       end
 
+      audit_exceptions << %w[token_conflicts token_valid token_bad_words] if labels.include?("ci-skip-token")
+
       audit_args << "--except" << audit_exceptions.join(",") if audit_exceptions.any?
 
       cask_content = path.read
 
-      runners(cask_content: cask_content).product(architectures(cask_content: cask_content)).map do |runner, arch|
+      runners, multi_os = runners(cask_content:)
+      runners.product(architectures(cask_content:)).filter_map do |runner, arch|
         native_runner_arch = arch == runner.fetch(:arch)
+        # If it's just a single OS test then we can just use the two real arch runners.
+        next if !native_runner_arch && !multi_os
+
         arch_args = native_runner_arch ? [] : ["--arch=#{arch}"]
         {
           name:         "test #{cask_token} (#{runner.fetch(:name)}, #{arch})",
@@ -176,7 +196,6 @@ module CiMatrix
           audit_args:   audit_args + arch_args,
           fetch_args:   arch_args,
           skip_install: labels.include?("ci-skip-install") || !native_runner_arch || skip_install,
-          skip_readall: !native_runner_arch,
           runner:       runner.fetch(:name),
         }
       end

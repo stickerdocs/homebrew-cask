@@ -11,7 +11,7 @@ cask "ealeksandrov-cd-to" do
     url :url
     regex(/^v?(\d+(?:[._]\d+)+)$/i)
     strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.tr("_", ".") }.compact
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
   end
 
@@ -19,7 +19,7 @@ cask "ealeksandrov-cd-to" do
 
   caveats <<~EOS
     To complete installation:
-    1. Open the the Applications folder in finder.
+    1. Open the Applications folder in finder.
     2. Drag "cd_to.app" onto the Finder toolbar while holding down the command(⌘)
     and option(⌥) keys.
 

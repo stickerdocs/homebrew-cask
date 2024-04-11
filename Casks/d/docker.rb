@@ -28,9 +28,9 @@ cask "docker" do
     depends_on macos: :big_sur
   end
   on_monterey :or_newer do
-    version "4.27.2,137060"
-    sha256 arm:   "05df5bafd920f83564766378cf68a974346bba2a5a2beae15015094be1aef8a4",
-           intel: "784ec9535cea22d16405696f4e9fc77dad761f83957dd0a62650245169ae8e4a"
+    version "4.29.0,145265"
+    sha256 arm:   "d51a70ceceab25e6e60589f77751a12dc54ecdae0e243ddb95d18c59a210a834",
+           intel: "3b6ea4803d29b947b1553d5d91e26815a76e099bcea0f3c55d27974868652127"
 
     livecheck do
       url "https://desktop.docker.com/mac/main/#{arch}/appcast.xml"
@@ -38,13 +38,20 @@ cask "docker" do
     end
 
     depends_on macos: ">= :monterey"
+
+    binary "Docker.app/Contents/Resources/etc/docker-compose.bash-completion",
+           target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/docker-compose"
+    binary "Docker.app/Contents/Resources/etc/docker-compose.zsh-completion",
+           target: "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_docker-compose"
+    binary "Docker.app/Contents/Resources/etc/docker-compose.fish-completion",
+           target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/docker-compose.fish"
   end
 
   url "https://desktop.docker.com/mac/main/#{arch}/#{version.csv.second}/Docker.dmg"
   name "Docker Desktop"
   name "Docker Community Edition"
   name "Docker CE"
-  desc "App to build and share containerized applications and microservices"
+  desc "App to build and share containerised applications and microservices"
   homepage "https://www.docker.com/products/docker-desktop"
 
   auto_updates true
@@ -56,23 +63,23 @@ cask "docker" do
   ]
 
   app "Docker.app"
-  binary "Docker.app/Contents/Resources/bin/com.docker.cli",
+  binary "#{appdir}/Docker.app/Contents/Resources/bin/com.docker.cli",
          target: "/usr/local/bin/com.docker.cli"
-  binary "Docker.app/Contents/Resources/bin/docker",
+  binary "#{appdir}/Docker.app/Contents/Resources/bin/docker",
          target: "/usr/local/bin/docker"
-  binary "Docker.app/Contents/Resources/bin/docker-compose",
+  binary "#{appdir}/Docker.app/Contents/Resources/bin/docker-compose",
          target: "/usr/local/bin/docker-compose"
-  binary "Docker.app/Contents/Resources/bin/docker-credential-desktop",
+  binary "#{appdir}/Docker.app/Contents/Resources/bin/docker-credential-desktop",
          target: "/usr/local/bin/docker-credential-desktop"
-  binary "Docker.app/Contents/Resources/bin/docker-credential-ecr-login",
+  binary "#{appdir}/Docker.app/Contents/Resources/bin/docker-credential-ecr-login",
          target: "/usr/local/bin/docker-credential-ecr-login"
-  binary "Docker.app/Contents/Resources/bin/docker-credential-osxkeychain",
+  binary "#{appdir}/Docker.app/Contents/Resources/bin/docker-credential-osxkeychain",
          target: "/usr/local/bin/docker-credential-osxkeychain"
-  binary "Docker.app/Contents/Resources/bin/docker-index",
+  binary "#{appdir}/Docker.app/Contents/Resources/bin/docker-index",
          target: "/usr/local/bin/docker-index"
-  binary "Docker.app/Contents/Resources/bin/hub-tool",
+  binary "#{appdir}/Docker.app/Contents/Resources/bin/hub-tool",
          target: "/usr/local/bin/hub-tool"
-  binary "Docker.app/Contents/Resources/bin/kubectl",
+  binary "#{appdir}/Docker.app/Contents/Resources/bin/kubectl",
          target: "/usr/local/bin/kubectl.docker"
   binary "Docker.app/Contents/Resources/etc/docker.bash-completion",
          target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/docker"

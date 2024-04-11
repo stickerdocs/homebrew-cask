@@ -1,6 +1,6 @@
 cask "tribler" do
-  version "7.13.1"
-  sha256 "655ce0d6f2828fd0657bdbffa61cb06e369f51bc9690502dc3159abbaf1a528d"
+  version "7.13.3"
+  sha256 "2c5d539b5e3de4de8d3584fd0071cfbe911791c0fc048bd92649a8e91afd979e"
 
   url "https://github.com/Tribler/tribler/releases/download/v#{version}/Tribler-#{version}.dmg",
       verified: "github.com/Tribler/tribler/"
